@@ -1,0 +1,28 @@
+project:
+  name: PatentLingo
+  version: 1.0.0
+  author: Natesh Gaddad
+
+languages:
+  source: english
+  target: kannada
+  source_code: eng_Latn
+  target_code: kan_Knda
+
+model:
+  base_model: ai4bharat/indictrans2-en-indic-1B
+  max_length: 512
+  batch_size: 8
+
+datasets:
+  primary: opus
+  validation: tatoeba
+  train_size: 100000
+  val_size: 5000
+  test_size: 2000
+
+training:
+  epochs: 3
+  learning_rate: 0.00005
+  warmup_steps: 500
+  weight_decay: 0.01
